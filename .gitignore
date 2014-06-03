@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #IDE workspace config
 /.idea/workspace.xml
 .idea/misc.xml
@@ -6,6 +7,8 @@
 #windows digital store
 .DS_Store
 
+=======
+>>>>>>> 1e1dace402cb3b02e7081c744130d09448da67c3
 # Built application files
 *.apk
 *.ap_
@@ -21,7 +24,10 @@ bin/
 gen/
 
 # Gradle files
+<<<<<<< HEAD
 .gradle
+=======
+>>>>>>> 1e1dace402cb3b02e7081c744130d09448da67c3
 .gradle/
 build/
 
