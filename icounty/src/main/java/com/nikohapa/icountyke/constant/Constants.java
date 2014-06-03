@@ -17,4 +17,7 @@ public class Constants {
     //TABS
     public static final String[] TABS_TITLE = {"Public", "InHouse Chat", "Profile"};
 
+    //message types
+    public static final String[] MSG_TYPES = {"SMS", "TWITTER", "FACEBOOK", "WHATSAPP"};
+
 }

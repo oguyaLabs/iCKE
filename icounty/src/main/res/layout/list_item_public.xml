@@ -1,7 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_card_background"
+    android:descendantFocusability="afterDescendants"
+    android:padding="10dp">
+
+    <!--top section  profpic, sender Name, phoneNo, date-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/img_profpic"
+            android:src="@drawable/person_image_empty"
+            android:contentDescription="@string/contentDescription"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <!-- name(for fb, twitter), phone no -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_weight=".4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_sender_name"
+                android:text="@string/lbl_sender_name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/txt_sender_phone"
+                android:text="@string/lbl_sender_phone"
+                android:textSize="17sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--date section-->
+        <TextView
+            android:id="@+id/txt_sender_time"
+            android:text="@string/lbl_sender_time"
+            android:textColor="@color/sender_time"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="right|top"
+            android:paddingRight="5dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <!--section text/message, & star -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.nikohapa.icountyke.widget.EllipsizedTextView
+            android:id="@+id/txt_sender_message"
+            android:text="@string/lbl_sender_text"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:layout_weight=".7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/img_MarkText"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/star_empty"
+            android:scaleType="fitXY"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
+
+    <!-- section media -->
+    <LinearLayout
+        android:id="@+id/section_media"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/img_mediaPic"
+            android:contentDescription="@string/contentDescription"
+            android:src="@drawable/kitui_county"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <!--section footer -> comment count &
+    message type(sms, fb, twitter-->
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+       <TextView
+           android:id="@+id/txt_comment_count"
+           android:text="@string/lbl_sender_comment_count"
+           android:textSize="15sp"
+           android:textColor="@color/links_color"
+           android:clickable="true"
+           android:gravity="bottom"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txt_message_type"
+            android:text="@string/lbl_sender_message_type"
+            android:textColor="@color/sender_time"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

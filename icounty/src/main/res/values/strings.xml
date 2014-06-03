@@ -16,4 +16,14 @@
     <!--main activity-->
     <string name="title_activity_main">@string/app_name</string>
     <string name="subtitle_activity_main">Isiolo County</string>
+
+    <!--public stream frag-->
+    <string name="lbl_sender_name">Benard Adongo</string>
+    <string name="lbl_sender_phone">+254714XXX696</string>
+    <string name="lbl_sender_text">Security ni mbaya huku kwetu &amp; no boreholes. Please expedite this.</string>
+    <string name="lbl_sender_time">3 Jun</string>
+    <string name="lbl_sender_comment_count">3 Comments</string>
+    <string name="lbl_sender_message_type">SMS</string>
+
+
 </resources>

@@ -8,5 +8,10 @@
     <color name="splash_icount">#009500</color>
     <color name="splash_screen_bg">#AADE87</color>
 
+    <!--public stream frag-->
+    <color name="sender_time">#ffa3a3a3</color>
+    <color name="links_color">#ff4d90fe</color>
+    <color name="public_bg">#EDECEB</color>
+
 
 </resources>
