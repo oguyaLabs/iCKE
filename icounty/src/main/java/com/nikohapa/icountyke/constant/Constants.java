@@ -14,6 +14,7 @@ public class Constants {
     //splash timer
     public static final long SPLASH_TIMER = 1000;
 
-    //API Keys
+    //TABS
+    public static final String[] TABS_TITLE = {"Public", "InHouse Chat", "Profile"};
 
 }

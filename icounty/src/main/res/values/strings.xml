@@ -4,14 +4,16 @@
     <string name="app_name">icountyKE</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
-
     <string name="contentDescription">image</string>
 
-    <!--splash screen -->
+    <!-- splash screen -->
     <string name="splash_banner">iCountyKE</string>
     <string name="splash_ichat">iChat. </string>
     <string name="splash_iconnect">iConnect. </string>
     <string name="splash_icount">iCount</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--main activity-->
+    <string name="title_activity_main">@string/app_name</string>
+    <string name="subtitle_activity_main">Isiolo County</string>
 </resources>
