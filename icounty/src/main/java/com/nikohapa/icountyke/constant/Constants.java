@@ -1,0 +1,19 @@
+package com.nikohapa.icountyke.constant;
+
+/**
+ * Created by james on 3/06/14.
+ */
+public class Constants {
+
+    //DB consts
+    public static final String DB_NAME = "icountyKE_db.sqlite";
+    public static final int DB_VERSION = 1;
+    public static final String DB_DIR = "/data/data/com.nikohapa.icountyke/databases/";
+    public static final String FORCE_FOREIGN_KEY_CHECKS = "PRAGMA foreign_keys = ON";
+
+    //splash timer
+    public static final long SPLASH_TIMER = 1000;
+
+    //API Keys
+
+}

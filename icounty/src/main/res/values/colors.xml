@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--splash screen -->
+    <color name="splash_app_banner">@android:color/black</color>
+    <color name="splash_ichat">@color/splash_app_banner</color>
+    <color name="splash_iconnect">#FF0000</color>
+    <color name="splash_icount">#009500</color>
+    <color name="splash_screen_bg">#AADE87</color>
+
+
+</resources>

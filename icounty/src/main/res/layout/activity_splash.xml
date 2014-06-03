@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.nikohapa.icountyke.ui.SplashActivity"
+    android:background="@color/splash_screen_bg">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/splashLogo"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="@string/contentDescription"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <TextView
+            android:text="@string/splash_banner"
+            android:textSize="35sp"
+            android:textStyle="bold"
+
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/splash_ichat"
+                android:textColor="@color/splash_ichat"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:text="@string/splash_iconnect"
+                android:textColor="@color/splash_iconnect"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:text="@string/splash_icount"
+                android:textColor="@color/splash_icount"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
