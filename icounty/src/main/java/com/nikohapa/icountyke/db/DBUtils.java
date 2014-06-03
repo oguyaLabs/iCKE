@@ -34,7 +34,7 @@ public class DBUtils {
 
         OutputStream dbOutputStream = new FileOutputStream(dbPath);
         InputStream dbInputStream;
-        dbInputStream = this.context.getResources().openRawResource(R.raw.icountyKE_db);
+        dbInputStream = this.context.getResources().openRawResource(R.raw.icountyke_db);
         while ((length = dbInputStream.read(buffer)) > 0) {
             dbOutputStream.write(buffer, 0, length);
         }

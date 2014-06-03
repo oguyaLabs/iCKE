@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,12 +14,20 @@ import com.nikohapa.icountyke.constant.Constants;
 
 public class SplashActivity extends ActionBarActivity {
 
+    private static final String LOG_TAG = "SplashActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
         //TODO init component => db, prefs, etc
+
+        try{
+            getSupportActionBar().hide();
+        }catch (Exception ex){
+            Log.e(LOG_TAG, "" + ex);
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override

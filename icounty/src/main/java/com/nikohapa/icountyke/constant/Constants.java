@@ -6,7 +6,7 @@ package com.nikohapa.icountyke.constant;
 public class Constants {
 
     //DB consts
-    public static final String DB_NAME = "icountyKE_db.sqlite";
+    public static final String DB_NAME = "icountyke_db.sqlite";
     public static final int DB_VERSION = 1;
     public static final String DB_DIR = "/data/data/com.nikohapa.icountyke/databases/";
     public static final String FORCE_FOREIGN_KEY_CHECKS = "PRAGMA foreign_keys = ON";
