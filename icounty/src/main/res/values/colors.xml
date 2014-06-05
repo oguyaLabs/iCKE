@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
     <!--splash screen -->
     <color name="splash_app_banner">@android:color/black</color>
     <color name="splash_ichat">@color/splash_app_banner</color>
@@ -12,6 +15,11 @@
     <color name="sender_time">#ffa3a3a3</color>
     <color name="links_color">#ff4d90fe</color>
     <color name="public_bg">#EDECEB</color>
+
+    <!--profile frag-->
+    <color name="bg_stroke">#F1F1F1</color>
+    <color name="profile_bg_color">#F8F7F6</color>
+
 
 
 </resources>

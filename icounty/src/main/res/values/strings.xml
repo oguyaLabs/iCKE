@@ -25,5 +25,9 @@
     <string name="lbl_sender_comment_count">3 Comments</string>
     <string name="lbl_sender_message_type">SMS</string>
 
-
+    <!-- profile frag -->
+    <string name="lbl_profile_name">Mimi Mwenyewe</string>
+    <string name="lbl_profile_position">Governor</string>
+    <string name="lbl_profile_county">Isiolo County</string>
+    <string name="lbl_recent_posts">Recent Posts</string>
 </resources>
