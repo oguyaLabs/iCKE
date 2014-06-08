@@ -20,6 +20,8 @@
     <color name="bg_stroke">#F1F1F1</color>
     <color name="profile_bg_color">#F8F7F6</color>
 
-
+    <!--attach pic popup window-->
+    <color name="attach_line_separator">#ffa3a3a3</color>
+    <color name="attach_bg_pressed">#E4E3E2</color>
 
 </resources>

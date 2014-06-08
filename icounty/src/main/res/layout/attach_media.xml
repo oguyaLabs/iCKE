@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:id="@+id/row_1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/splash_screen_bg">
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/attach_line_separator" />
+
+        <LinearLayout
+            android:id="@+id/sect_take_pic"
+            android:orientation="vertical"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:clickable="true"
+            android:onClick="attachMenuListener"
+            android:background="@drawable/attach_media_bg"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/attach_photo"
+                android:onClick="attachMenuListener"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/contentDescription"
+                android:src="@drawable/camera" />
+
+            <TextView
+                android:text="@string/action_attach_pic"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/attach_line_separator" />
+
+        <LinearLayout
+            android:id="@+id/sect_record_audio"
+            android:orientation="vertical"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:onClick="attachMenuListener"
+            android:clickable="true"
+            android:background="@drawable/attach_media_bg"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/attach_audio"
+                android:layout_width="match_parent"
+                android:onClick="attachMenuListener"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/contentDescription"
+                android:src="@drawable/audio_record" />
+
+            <TextView
+                android:text="@string/action_attach_audio"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/attach_line_separator" />
+
+        <LinearLayout
+            android:id="@+id/sect_record_video"
+            android:orientation="vertical"
+            android:layout_weight=".3"
+            android:layout_width="0dp"
+            android:clickable="true"
+            android:onClick="attachMenuListener"
+            android:background="@drawable/attach_media_bg"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/attach_video"
+                android:onClick="attachMenuListener"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/contentDescription"
+                android:src="@drawable/video_record" />
+
+            <TextView
+                android:text="@string/action_attach_video"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/attach_line_separator" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_below="@id/row_1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_alignLeft="@id/row_1"
+        android:layout_alignRight="@id/row_1"
+        android:background="@color/attach_line_separator" />
+
+</RelativeLayout>

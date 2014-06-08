@@ -3,12 +3,14 @@ package com.nikohapa.icountyke.ui.frags;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import com.nikohapa.icountyke.R;
 import com.nikohapa.icountyke.adapter.ViewInflaterBaseAdapter;
 import com.nikohapa.icountyke.constant.Constants;
+import com.nikohapa.icountyke.ui.ViewMessageActivity;
 import com.nikohapa.icountyke.widget.EllipsizedTextView;
 
 import java.util.ArrayList;
@@ -27,7 +30,7 @@ import java.util.Random;
  * A simple {@link Fragment} subclass.
  *
  */
-public class PublicFragment extends Fragment {
+public class PublicFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     public static final String LOG_TAG = "PublicFragment";
 
@@ -72,6 +75,7 @@ public class PublicFragment extends Fragment {
 
         PublicListAdapter adapter = new PublicListAdapter(new Inflater(), data);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
     }
 
     @Override
@@ -91,6 +95,11 @@ public class PublicFragment extends Fragment {
     public void onViewStateRestored(Bundle savedInstanceState){
         super.onViewStateRestored(savedInstanceState);
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        startActivity(new Intent(this.activity, ViewMessageActivity.class));
     }
 
     //inflater

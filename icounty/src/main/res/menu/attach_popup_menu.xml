@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/action_attach_photo"
+        android:title="@string/action_attach_pic"
+        app:showAsAction="always"
+        android:showAsAction="always"
+        android:icon="@drawable/camera"
+        android:orderInCategory="1"/>
+
+    <item
+        android:id="@+id/action_attach_video"
+        android:title="@string/action_attach_video"
+        android:showAsAction="always"
+        app:showAsAction="always"
+        android:icon="@drawable/video_record"
+        android:orderInCategory="2"/>
+
+    <item
+        android:id="@+id/action_attach_audio"
+        android:title="@string/action_attach_audio"
+        app:showAsAction="always"
+        android:icon="@drawable/audio_record"
+        android:orderInCategory="3"/>
+
+
 
 </menu>
