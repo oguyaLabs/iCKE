@@ -38,4 +38,7 @@
     <string name="action_attach_audio">Audio</string>
     <string name="action_attach_pic">Picture</string>
 
+    <!-- chat responses -->
+    <string name="lbl_my_response">Hi Concerned Citizen, we\'re prioritizing the issue of water shortage. We already have plans underway to beef up security blah blah blah</string>
+    <string name="hint_new_message">Type Message</string>
 </resources>

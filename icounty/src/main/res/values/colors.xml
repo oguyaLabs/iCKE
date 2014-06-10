@@ -24,4 +24,9 @@
     <color name="attach_line_separator">#ffa3a3a3</color>
     <color name="attach_bg_pressed">#E4E3E2</color>
 
+    <!--chat heads-->
+    <color name="chat_bg_color">#fff9f8f7</color>
+    <color name="chat_my_message">#a0c3ff9e</color>
+    <color name="chat_head_stroke">#ffdddddd</color>
+    
 </resources>
