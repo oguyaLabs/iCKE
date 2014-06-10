@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nikohapa.icountyke.R;
+import com.nikohapa.icountyke.adapter.ChatAdapter;
 import com.nikohapa.icountyke.adapter.ViewInflaterBaseAdapter;
 import com.nikohapa.icountyke.constant.Constants;
 import com.nikohapa.icountyke.widget.EllipsizedTextView;
@@ -32,7 +33,7 @@ public class ViewMessageActivity extends ActionBarActivity {
 
     private static final String LOG_TAG = "ViewMessageActivity";
     private ListView chatListView;
-    private ArrayList<String> messagesList = new ArrayList<String>();
+    private ArrayList<Integer> messagesList = new ArrayList<Integer>();
     private ChatListAdapter listAdapter;
 
 
@@ -43,11 +44,25 @@ public class ViewMessageActivity extends ActionBarActivity {
 
         chatListView = (ListView)findViewById(R.id.ChatListView);
 
-        for(int i=0; i<10; i++)
-            messagesList.add("");
+        messagesList.add(1);
+        messagesList.add(0);
+        messagesList.add(1);
+        messagesList.add(0);
+        messagesList.add(1);
+        messagesList.add(0);
+        messagesList.add(1);
 
-        listAdapter = new ChatListAdapter(new Inflater(), messagesList);
-        chatListView.setAdapter(listAdapter);
+        ChatAdapter chatAdapter = new ChatAdapter(ViewMessageActivity.this);
+        for(int i=0; i<20; i++){
+            chatAdapter.addItem(i);
+            if(i % 2 == 0)
+                chatAdapter.addSeparatorItem(i);
+        }
+        chatListView.setAdapter(chatAdapter);
+
+
+//        listAdapter = new ChatListAdapter(new Inflater(), messagesList);
+//        chatListView.setAdapter(listAdapter);
     }
 
 
@@ -177,7 +192,11 @@ public class ViewMessageActivity extends ActionBarActivity {
 
     //inflater
     private class Inflater implements ViewInflaterBaseAdapter.ViewInflater{
+
+        boolean SOURCE_TYPE_SENDER = true;
+
         private class ViewHolder{
+            int SOURCE_TYPE; //1 for sender 2 for my response
             //sender's text
             View section_sender;
             View section_my_response;
@@ -198,65 +217,92 @@ public class ViewMessageActivity extends ActionBarActivity {
         }
 
         @Override
-        public View inflate(ViewInflaterBaseAdapter adapter, int pos, View ConvertView, ViewGroup parent) {
+        public View inflate(ViewInflaterBaseAdapter adapter, int position, View ConvertView, ViewGroup parent) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             View rowView = ConvertView;
+            View mRowView = ConvertView;
 
             if(rowView == null){
-                rowView = inflater.inflate(R.layout.list_item_view_message, parent, false);
 
-                ViewHolder viewHolder = new ViewHolder();
-                viewHolder.section_sender = (LinearLayout)rowView.findViewById(R.id.section_sender);
-                viewHolder.section_my_response = (LinearLayout)rowView.findViewById(R.id.section_my_response);
+                //TODO REMOVE THIS
+                SOURCE_TYPE_SENDER = (messagesList.get(position) % 2 == 0);
 
-                viewHolder.section_media = (LinearLayout)rowView.findViewById(R.id.section_media);
-                viewHolder.img_profpic = (ImageView) rowView.findViewById(R.id.img_profpic);
-                viewHolder.img_mediaPic = (ImageView)rowView.findViewById(R.id.img_mediaPic);
-                viewHolder.img_MarkText = (ImageView)rowView.findViewById(R.id.img_MarkText);
-                viewHolder.txt_sender_message = (EllipsizedTextView)rowView.findViewById(R.id.txt_sender_message);
-                viewHolder.txt_sender_name = (TextView)rowView.findViewById(R.id.txt_sender_name);
-                viewHolder.txt_sender_phone = (TextView)rowView.findViewById(R.id.txt_sender_phone);
-                viewHolder.txt_sender_time = (TextView)rowView.findViewById(R.id.txt_sender_time);
-                viewHolder.txt_comment_count = (TextView)rowView.findViewById(R.id.txt_comment_count);
-                viewHolder.txt_message_type = (TextView)rowView.findViewById(R.id.txt_message_type);
 
-                viewHolder.txt_my_response = (TextView)rowView.findViewById(R.id.txt_my_response);
-                viewHolder.txt_response_time = (TextView)rowView.findViewById(R.id.txt_response_time);
+                if(messagesList.get(position) == 1){
+                    ViewHolder viewHolder = new ViewHolder();
+                    //load senders view
+                    rowView = inflater.inflate(R.layout.item_sender_message, parent, false);
 
-                rowView.setTag(viewHolder);
+                    viewHolder.section_media = (LinearLayout)rowView.findViewById(R.id.section_media);
+                    viewHolder.img_profpic = (ImageView) rowView.findViewById(R.id.img_profpic);
+                    viewHolder.img_mediaPic = (ImageView)rowView.findViewById(R.id.img_mediaPic);
+                    viewHolder.img_MarkText = (ImageView)rowView.findViewById(R.id.img_MarkText);
+                    viewHolder.txt_sender_message = (EllipsizedTextView)rowView.findViewById(R.id.txt_sender_message);
+                    viewHolder.txt_sender_name = (TextView)rowView.findViewById(R.id.txt_sender_name);
+                    viewHolder.txt_sender_phone = (TextView)rowView.findViewById(R.id.txt_sender_phone);
+                    viewHolder.txt_sender_time = (TextView)rowView.findViewById(R.id.txt_sender_time);
+                    viewHolder.txt_comment_count = (TextView)rowView.findViewById(R.id.txt_comment_count);
+                    viewHolder.txt_message_type = (TextView)rowView.findViewById(R.id.txt_message_type);
+
+                    rowView.setTag(viewHolder);
+
+                }else if(messagesList.get(position) == 0){
+                    ViewHolder viewHolder = new ViewHolder();
+
+                    //load my response view
+                    rowView = inflater.inflate(R.layout.item_my_message, parent, false);
+
+                    viewHolder.txt_my_response = (TextView)rowView.findViewById(R.id.txt_my_response);
+                    viewHolder.txt_response_time = (TextView)rowView.findViewById(R.id.txt_response_time);
+
+                    rowView.setTag(viewHolder);
+
+                }
             }
 
             ViewHolder viewHolder = (ViewHolder)rowView.getTag();
 
-            //TODO set data
-//            viewHolder.img_profpic;
-//            viewHolder.img_mediaPic;
-//            viewHolder.img_MarkText;
-//            viewHolder.txt_sender_message;
-//            viewHolder.txt_sender_name;
-//            viewHolder.txt_sender_phone;
-//            viewHolder.txt_sender_time;
-//            viewHolder.txt_comment_count;
-//            viewHolder.txt_message_type;
 
-            //TODO remove non relevant views
-            viewHolder.txt_sender_message.setMaxLines(10 * 10 * 10);
-            viewHolder.txt_comment_count.setVisibility(View.GONE);
+            if(messagesList.get(position) == 1){
+                //TODO set data :: for sender
+//                viewHolder.img_profpic;
+//                viewHolder.img_mediaPic;
+//                viewHolder.img_MarkText;
+//                viewHolder.txt_sender_message;
+//                viewHolder.txt_sender_name;
+//                viewHolder.txt_sender_phone;
+//                viewHolder.txt_sender_time;
+//                viewHolder.txt_comment_count;
+//                viewHolder.txt_message_type;
+                //TODO remove non relevant views
+                try{
+                    viewHolder.txt_sender_message.setMaxLines(10 * 10 * 10);
+                    viewHolder.txt_comment_count.setVisibility(View.GONE);
+                }catch (Exception ex){
+                    Log.e(LOG_TAG, "exception in type_sender_layout::"+ex.getMessage(), ex.getCause());
+                }
 
 
-            //dummy stuff TODO remove this
-            if( getRandomNo() % 2 == 0){
-                Log.e(LOG_TAG, "showing pic");
-                viewHolder.section_media.setVisibility(View.VISIBLE);
-                viewHolder.txt_message_type.setText(
-                        Constants.MSG_TYPES[new Random().nextInt(Constants.MSG_TYPES.length)]);
+                //TODO remove this dummy image stuff
+                if( messagesList.get(position) == 1){
+                    Log.e(LOG_TAG, "showing pic");
+                    viewHolder.section_media.setVisibility(View.VISIBLE);
+                    viewHolder.txt_message_type.setText(
+                            Constants.MSG_TYPES[new Random().nextInt(Constants.MSG_TYPES.length)]);
+                }else{
+                    viewHolder.section_media.setVisibility(View.GONE);
+                }
 
-                viewHolder.section_sender.setVisibility(View.VISIBLE);
-                viewHolder.section_my_response.setVisibility(View.VISIBLE);
+
             }else{
-                viewHolder.section_media.setVisibility(View.GONE);
-                viewHolder.section_my_response.setVisibility(View.VISIBLE);
+                //TODO set data :: for my(mp/governor) response
+//                viewHolder.txt_my_response;
+//                viewHolder.txt_response_time;
             }
+
+
+
+
 
             //TODO format dates, set Fonts
 
@@ -264,14 +310,16 @@ public class ViewMessageActivity extends ActionBarActivity {
         }
 
         int getRandomNo(){
-            return new Random(2719293).nextInt();
+            return new Random(200719293).nextInt();
         }
+
+
     }
 
     //list adapter
-    public class ChatListAdapter extends ViewInflaterBaseAdapter<String>{
+    public class ChatListAdapter extends ViewInflaterBaseAdapter<Integer>{
 
-        public ChatListAdapter(ViewInflater inflater, ArrayList<String> data) {
+        public ChatListAdapter(ViewInflater inflater, ArrayList<Integer> data) {
             super(inflater, data);
             super.setInflater(inflater);
         }

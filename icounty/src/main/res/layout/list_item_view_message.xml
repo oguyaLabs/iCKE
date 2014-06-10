@@ -41,7 +41,6 @@
     <LinearLayout
         android:id="@+id/section_my_response"
         android:orientation="vertical"
-        android:visibility="gone"
         android:layout_marginTop="10dp"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="20dp"
