@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--my/mp chat head-->
+    <LinearLayout
+        android:id="@+id/section_my_response"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_chat_head">
+
+        <!-- my response -->
+        <include layout="@layout/item_my_chat"/>
+
+    </LinearLayout>
+
+</LinearLayout>
