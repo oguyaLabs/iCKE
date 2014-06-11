@@ -1,6 +1,7 @@
 package com.nikohapa.icountyke.ui;
 
 import android.graphics.drawable.BitmapDrawable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.view.ActionMode;
@@ -25,6 +26,7 @@ import com.nikohapa.icountyke.R;
 import com.nikohapa.icountyke.adapter.ChatAdapter;
 import com.nikohapa.icountyke.adapter.ViewInflaterBaseAdapter;
 import com.nikohapa.icountyke.constant.Constants;
+import com.nikohapa.icountyke.ui.frags.ForwardMessageFragment;
 import com.nikohapa.icountyke.widget.EllipsizedTextView;
 
 import org.w3c.dom.Text;
@@ -35,6 +37,9 @@ import java.util.Random;
 public class ViewMessageActivity extends ActionBarActivity {
 
     private static final String LOG_TAG = "ViewMessageActivity";
+    private static final String ACTIVE_FRAG = "forward_message_active_frag";
+    private ForwardMessageFragment fragment;
+
     private ListView chatListView;
     private ArrayList<Integer> messagesList = new ArrayList<Integer>();
 
@@ -243,6 +248,7 @@ public class ViewMessageActivity extends ActionBarActivity {
             switch (item.getItemId()){
                 case R.id.quick_forward:    //forward message
                     toast("forwarding message");
+                    forwardMessage("");
                     actionMode.finish();
                     return true;
 
@@ -256,6 +262,23 @@ public class ViewMessageActivity extends ActionBarActivity {
                 default: return false;
             }
         }
+
+        void forwardMessage(String messageID){
+            fragment = ForwardMessageFragment.newInstance(messageID);
+            fragment.setOnClickListener(ForwardClickListener);
+            fragment.show(getSupportFragmentManager(), ACTIVE_FRAG);
+        }
+
+        AdapterView.OnItemClickListener ForwardClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ViewMessageActivity.this, "forwarding to: "+
+                        Constants.INHOUSE_CHAT_MEMBERS[position], Toast.LENGTH_SHORT).show();
+
+                //TODO forward message
+                if(fragment != null) fragment.dismiss();
+            }
+        };
 
         // Called when the user exits the action mode
         @Override

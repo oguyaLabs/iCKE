@@ -20,4 +20,6 @@ public class Constants {
     //message types
     public static final String[] MSG_TYPES = {"SMS", "TWITTER", "FACEBOOK", "WHATSAPP"};
 
+    //inhouse chat list
+    public static final String[] INHOUSE_CHAT_MEMBERS = {"All", "Governer", "Deputy Governer", "Senator", "MCA", "Chief"};
 }
