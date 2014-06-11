@@ -3,6 +3,7 @@ package com.nikohapa.icountyke.ui;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.view.ActionMode;
 import android.support.v7.widget.PopupMenu;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,6 +41,10 @@ public class ViewMessageActivity extends ActionBarActivity {
     private EditText new_response;
     private ImageView send_message;
 
+    private ActionMode currentActionMode;
+    private int currentListItemIndex;
+    private ChatAdapter chatAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +63,7 @@ public class ViewMessageActivity extends ActionBarActivity {
         messagesList.add(0);
         messagesList.add(1);
 
-        ChatAdapter chatAdapter = new ChatAdapter(ViewMessageActivity.this);
+        chatAdapter = new ChatAdapter(ViewMessageActivity.this);
         for(int i=0; i<20; i++){
             chatAdapter.addItem(i);
             if(i % 2 == 0)
@@ -66,6 +72,7 @@ public class ViewMessageActivity extends ActionBarActivity {
         chatListView.setAdapter(chatAdapter);
         chatListView.requestFocus();
 
+        chatListView.setOnItemLongClickListener(longClickListener);
 
 //        listAdapter = new ChatListAdapter(new Inflater(), messagesList);
 //        chatListView.setAdapter(listAdapter);
@@ -76,6 +83,17 @@ public class ViewMessageActivity extends ActionBarActivity {
         new_response = (EditText)findViewById(R.id.edit_new_response);
         send_message = (ImageView)findViewById(R.id.btn_send_message);
     }
+
+    AdapterView.OnItemLongClickListener longClickListener = new AdapterView.OnItemLongClickListener() {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            if(currentActionMode != null) {return false;}
+            currentListItemIndex = position;
+            currentActionMode = startSupportActionMode(modeCallBack);
+            view.setSelected(true);
+            return true;
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -204,5 +222,46 @@ public class ViewMessageActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //callback action mode for forward/delete messages
+    private ActionMode.Callback modeCallBack = new ActionMode.Callback() {
+        @Override
+        public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+            actionMode.setTitle("Actions");
+            actionMode.getMenuInflater().inflate(R.menu.chat_quick_actions, menu);
+            return true;
+        }
+
+        // Called each time the action mode is shown.
+        @Override
+        public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+            return false;
+        }
+
+        // Called when the user selects a contextual menu item
+        @Override
+        public boolean onActionItemClicked(ActionMode actionMode, MenuItem item) {
+            switch (item.getItemId()){
+                case R.id.quick_forward:    //forward message
+                    toast("forwarding message");
+                    actionMode.finish();
+                    return true;
+
+                case R.id.quick_delete:     //delete message
+                    toast("message deleted");
+                    chatAdapter.removeItem(currentListItemIndex);
+                    chatAdapter.notifyDataSetChanged();
+                    actionMode.finish();
+                    return true;
+
+                default: return false;
+            }
+        }
+
+        // Called when the user exits the action mode
+        @Override
+        public void onDestroyActionMode(ActionMode actionMode) {
+            currentActionMode = null;
+        }
+    };
 
 }

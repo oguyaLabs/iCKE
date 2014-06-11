@@ -66,6 +66,10 @@ public class ChatAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public void removeItem(final int position){
+        chatList.remove(position);
+    }
+
     public void addSeparatorItem(final int item) {
         chatList.add(item);
         // save separator position
