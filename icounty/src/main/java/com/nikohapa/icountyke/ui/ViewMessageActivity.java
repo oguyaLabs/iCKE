@@ -44,6 +44,8 @@ public class ViewMessageActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_message);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         initUI();
 
         //TODO dummy data
@@ -184,6 +186,10 @@ public class ViewMessageActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         switch(item.getItemId()){
+            case R.id.home: //nav back
+                onBackPressed();
+                break;
+
             case R.id.action_attach:    //attach item
                 View attach = findViewById(R.id.action_attach);
 //                showPopUpMenu(attach);

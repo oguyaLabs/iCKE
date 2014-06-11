@@ -22,7 +22,11 @@
         </activity>
         <activity
             android:name=".ui.ViewMessageActivity"
-            android:label="@string/title_activity_view_message" >
+            android:label="@string/title_activity_view_message"
+            android:parentActivityName=".ui.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.nikohapa.icountyke.ui.MainActivity"/>
         </activity>
     </application>
 
