@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.nikohapa.icountyke.R;
@@ -18,6 +20,12 @@ public class ComposeMessageActivity extends ActionBarActivity {
     static final String ACTIVE_FRAG = "active_frag";
     private ForwardMessageFragment fragment;
 
+    private View section_media;
+    private ImageView attach_photo;
+    private ImageView attach_audio;
+    private ImageView attach_video;
+    private ImageView media_pic;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +33,40 @@ public class ComposeMessageActivity extends ActionBarActivity {
         setContentView(R.layout.activity_compose_message);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        initUI();
 
     }
 
+
+    void initUI(){
+        section_media = (LinearLayout)findViewById(R.id.section_media);
+        attach_photo = (ImageView)findViewById(R.id.attach_photo);
+        attach_audio = (ImageView)findViewById(R.id.attach_audio);
+        attach_video = (ImageView)findViewById(R.id.attach_video);
+        media_pic = (ImageView)findViewById(R.id.media_pic);
+
+        attach_photo.setOnClickListener(clickListener);
+        attach_video.setOnClickListener(clickListener);
+        attach_audio.setOnClickListener(clickListener);
+    }
+
+    View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.attach_photo:
+                    //TODO attach pic
+                    section_media.setVisibility(View.VISIBLE);
+                    break;
+                case R.id.attach_audio:
+                    //TODO attach audio
+                    break;
+                case R.id.attach_video:
+                    //TODO attach video
+                    break;
+            }
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

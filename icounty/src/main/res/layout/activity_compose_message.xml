@@ -121,6 +121,7 @@
 
             <LinearLayout
                 android:id="@+id/section_media"
+                android:visibility="gone"
                 android:orientation="vertical"
                 android:padding="5dp"
                 android:layout_marginTop="10dp"
@@ -129,6 +130,7 @@
                 android:layout_height="200dp">
 
                 <ImageView
+                    android:id="@+id/media_pic"
                     android:src="@drawable/kitui_county"
                     android:contentDescription="@string/contentDescription"
                     android:scaleType="centerCrop"
