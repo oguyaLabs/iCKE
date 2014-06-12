@@ -10,7 +10,7 @@
         android:id="@+id/row_1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@color/splash_screen_bg">
@@ -30,24 +30,16 @@
             android:background="@drawable/attach_media_bg"
             android:layout_height="match_parent">
 
-            <ImageView
+            <Button
                 android:id="@+id/attach_photo"
                 android:onClick="attachMenuListener"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/contentDescription"
-                android:src="@drawable/camera" />
-
-            <TextView
+                android:layout_height="match_parent"
                 android:text="@string/action_attach_pic"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:drawableTop="@drawable/ic_attach_camera"
+                android:drawablePadding="-10dp"
+                android:background="@drawable/attach_media_bg"
+                android:layout_gravity="top|center_horizontal" />
 
         </LinearLayout>
 
@@ -66,22 +58,16 @@
             android:background="@drawable/attach_media_bg"
             android:layout_height="match_parent">
 
-            <ImageView
+            <Button
                 android:id="@+id/attach_audio"
-                android:layout_width="match_parent"
                 android:onClick="attachMenuListener"
-                android:layout_height="50dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/contentDescription"
-                android:src="@drawable/audio_record" />
-
-            <TextView
-                android:text="@string/action_attach_audio"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:text="@string/action_attach_audio"
+                android:drawableTop="@drawable/ic_attach_audio"
+                android:drawablePadding="-10dp"
+                android:background="@drawable/attach_media_bg"
+                android:layout_gravity="top|center_horizontal" />
 
         </LinearLayout>
 
@@ -101,22 +87,17 @@
             android:background="@drawable/attach_media_bg"
             android:layout_height="match_parent">
 
-            <ImageView
+            <Button
                 android:id="@+id/attach_video"
                 android:onClick="attachMenuListener"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/contentDescription"
-                android:src="@drawable/video_record" />
-
-            <TextView
+                android:layout_height="match_parent"
                 android:text="@string/action_attach_video"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:drawableTop="@drawable/ic_attach_video"
+                android:drawablePadding="-10dp"
+                android:background="@drawable/attach_media_bg"
+                android:layout_gravity="top|center_horizontal" />
+
         </LinearLayout>
 
         <View
