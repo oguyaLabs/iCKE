@@ -40,6 +40,7 @@ public class ViewMessageActivity extends ActionBarActivity {
     private static final String ACTIVE_FRAG = "forward_message_active_frag";
     private ForwardMessageFragment fragment;
 
+    private PopupWindow popupWindow;
     private ListView chatListView;
     private ArrayList<Integer> messagesList = new ArrayList<Integer>();
 
@@ -119,7 +120,7 @@ public class ViewMessageActivity extends ActionBarActivity {
     }
 
     void showPopupWindow(View view){
-        PopupWindow popupWindow = new PopupWindow(ViewMessageActivity.this);
+        popupWindow = new PopupWindow(ViewMessageActivity.this);
         View layout = getLayoutInflater().inflate(R.layout.attach_media, null);
 
         popupWindow.setContentView(layout);
@@ -137,16 +138,19 @@ public class ViewMessageActivity extends ActionBarActivity {
             case R.id.attach_photo:
             case R.id.sect_take_pic:
                 toast("take pic");
+                if(popupWindow != null) popupWindow.dismiss();
                 break;
 
             case R.id.attach_audio:
             case R.id.sect_record_audio:
                 toast("record audio");
+                if(popupWindow != null) popupWindow.dismiss();
                 break;
 
             case R.id.attach_video:
             case R.id.sect_record_video:
                 toast("record video");
+                if(popupWindow != null) popupWindow.dismiss();
                 break;
 
             default: break;
