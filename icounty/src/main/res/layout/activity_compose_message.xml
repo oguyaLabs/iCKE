@@ -28,27 +28,16 @@
                     android:orientation="vertical"
                     android:layout_weight=".3"
                     android:layout_width="0dp"
-                    android:clickable="true"
-                    android:background="@drawable/attach_media_bg"
                     android:layout_height="match_parent">
 
-                    <ImageView
+                    <Button
                         android:id="@+id/attach_photo"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center_horizontal"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@string/contentDescription"
-                        android:src="@drawable/camera" />
-
-                    <TextView
+                        android:layout_height="match_parent"
                         android:text="@string/action_attach_pic"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:gravity="center_horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
+                        android:drawableTop="@drawable/ic_attach_camera"
+                        android:background="@drawable/attach_media_bg"
+                        android:layout_gravity="bottom|center_horizontal" />
 
                 </LinearLayout>
 
@@ -66,21 +55,14 @@
                     android:background="@drawable/attach_media_bg"
                     android:layout_height="match_parent">
 
-                    <ImageView
+                    <Button
                         android:id="@+id/attach_audio"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@string/contentDescription"
-                        android:src="@drawable/audio_record" />
-
-                    <TextView
+                        android:layout_height="match_parent"
                         android:text="@string/action_attach_audio"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:gravity="center_horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:drawableTop="@drawable/ic_attach_audio"
+                        android:background="@drawable/attach_media_bg"
+                        android:layout_gravity="bottom|center_horizontal" />
 
                 </LinearLayout>
 
@@ -99,21 +81,15 @@
                     android:background="@drawable/attach_media_bg"
                     android:layout_height="match_parent">
 
-                    <ImageView
+                    <Button
                         android:id="@+id/attach_video"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@string/contentDescription"
-                        android:src="@drawable/video_record" />
-
-                    <TextView
+                        android:layout_height="match_parent"
                         android:text="@string/action_attach_video"
-                        android:textSize="17sp"
-                        android:textStyle="bold"
-                        android:gravity="center_horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:drawableTop="@drawable/ic_attach_video"
+                        android:background="@drawable/attach_media_bg"
+                        android:layout_gravity="bottom|center_horizontal" />
+
                 </LinearLayout>
 
 
@@ -156,10 +132,6 @@
 
         </LinearLayout>
 
-
-
     </ScrollView>
-
-
 
 </RelativeLayout>
