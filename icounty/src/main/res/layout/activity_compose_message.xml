@@ -1,0 +1,163 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nikohapa.icountyke.ui.ComposeMessageActivity"
+    android:padding="5dp"
+    android:background="@color/profile_bg_color">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--section attach media -->
+            <LinearLayout
+                android:id="@+id/row_1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                <LinearLayout
+                    android:id="@+id/sect_take_pic"
+                    android:orientation="vertical"
+                    android:layout_weight=".3"
+                    android:layout_width="0dp"
+                    android:clickable="true"
+                    android:background="@drawable/attach_media_bg"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/attach_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_horizontal"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/contentDescription"
+                        android:src="@drawable/camera" />
+
+                    <TextView
+                        android:text="@string/action_attach_pic"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/attach_line_separator" />
+
+                <LinearLayout
+                    android:id="@+id/sect_record_audio"
+                    android:orientation="vertical"
+                    android:layout_weight=".3"
+                    android:layout_width="0dp"
+                    android:clickable="true"
+                    android:background="@drawable/attach_media_bg"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/attach_audio"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/contentDescription"
+                        android:src="@drawable/audio_record" />
+
+                    <TextView
+                        android:text="@string/action_attach_audio"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/attach_line_separator" />
+
+                <LinearLayout
+                    android:id="@+id/sect_record_video"
+                    android:orientation="vertical"
+                    android:layout_weight=".3"
+                    android:layout_width="0dp"
+                    android:clickable="true"
+                    android:background="@drawable/attach_media_bg"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/attach_video"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/contentDescription"
+                        android:src="@drawable/video_record" />
+
+                    <TextView
+                        android:text="@string/action_attach_video"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_media"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/compose_msg_editbox"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:src="@drawable/kitui_county"
+                    android:contentDescription="@string/contentDescription"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!-- TODO add additional media -> audio & video player -->
+
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/edit_new_message"
+                android:hint="@string/hint_compose_message"
+                android:minLines="5"
+                android:gravity="top"
+                android:padding="5dp"
+                android:background="@drawable/compose_msg_editbox"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

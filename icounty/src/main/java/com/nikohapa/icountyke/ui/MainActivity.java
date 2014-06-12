@@ -1,5 +1,6 @@
 package com.nikohapa.icountyke.ui;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -88,9 +89,15 @@ public class MainActivity extends ActionBarActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch(item.getItemId()){
+            case R.id.action_compose:   //TODO compose new message
+                Bundle args = new Bundle();
+                Intent intent = new Intent(MainActivity.this, ComposeMessageActivity.class);
+                intent.putExtras(args);
+                startActivity(intent);
+                break;
+
+            default: break;
         }
         return super.onOptionsItemSelected(item);
     }

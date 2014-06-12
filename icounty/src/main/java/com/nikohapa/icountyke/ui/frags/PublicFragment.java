@@ -154,6 +154,15 @@ public class PublicFragment extends Fragment implements AdapterView.OnItemClickL
 //            viewHolder.txt_comment_count;
 //            viewHolder.txt_message_type;
 
+            //TODO mark/star message
+            viewHolder.img_MarkText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    view.setBackgroundResource(R.drawable.star_full);
+                }
+            });
+
+
             //dummy stuff TODO remove this
             if( getRandomNo() % 2 == 0){
                 Log.e(LOG_TAG, "showing pic");

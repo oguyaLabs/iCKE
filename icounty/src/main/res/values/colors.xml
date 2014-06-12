@@ -28,5 +28,8 @@
     <color name="chat_bg_color">#fff9f8f7</color>
     <color name="chat_my_message">#a0c3ff9e</color>
     <color name="chat_head_stroke">#ffdddddd</color>
-    
+
+    <!--compose message -->
+    <color name="edit_normal_stroke">#C2C2C2</color>
+    <color name="edit_pressed_stroke">#676767</color>
 </resources>

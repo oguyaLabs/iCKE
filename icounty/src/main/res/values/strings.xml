@@ -16,6 +16,7 @@
     <!-- main activity -->
     <string name="title_activity_main">@string/app_name</string>
     <string name="subtitle_activity_main">Isiolo County</string>
+    <string name="action_compose_new">Compose Message</string>
 
     <!-- public stream frag -->
     <string name="lbl_sender_name">Benard Adongo</string>
@@ -41,4 +42,11 @@
     <!-- chat responses -->
     <string name="lbl_my_response">Hi Concerned Citizen, we\'re prioritizing the issue of water shortage. We already have plans underway to beef up security blah blah blah</string>
     <string name="hint_new_message">Type Message</string>
+    
+    <!--compose message -->
+    <string name="title_activity_compose_message">Compose Message</string>
+    <string name="action_forward">Forward</string>
+    <string name="action_broadcast">Broadcast</string>
+    <string name="hint_compose_message">What\'s new?</string>
+
 </resources>

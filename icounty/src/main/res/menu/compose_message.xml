@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.ComposeMessageActivity" >
+
+    <item android:id="@+id/action_broadcast"
+        android:title="@string/action_broadcast"
+        android:icon="@drawable/action_broadcast"
+        app:showAsAction="withText|ifRoom"/>
+
+    <item android:id="@+id/action_forward"
+        android:title="@string/action_forward"
+        android:icon="@drawable/action_forward"
+        app:showAsAction="withText|ifRoom"/>
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>
